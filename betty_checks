@@ -1,15 +1,19 @@
-#include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - Entry point of the program
  *
  * Description: This is the main function that
- * prints a message to the console.
+ * writes a message to the standard output using the write function.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	printf("Hello, Betty!\n");
+	char *message = "Hello, Betty!\n";
+	size_t len = 13;  // Length of the message
+
+	write(1, message, len);  // 1 is the file descriptor for standard output
+
 	return (0);
 }
